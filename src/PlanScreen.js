@@ -1,8 +1,9 @@
+import { useTheme } from '@react-navigation/native';
 import React, {useState} from 'react';
 import {Text, View, StyleSheet, FlatList, TouchableOpacity} from 'react-native';
 
 const styles = StyleSheet.create({
-  screen: {flex: 1},
+  screen: {flex: 1, backgroundColor: 'blue'},
   item: {
     padding: 20,
     marginVertical: 8,
@@ -39,6 +40,7 @@ const Item = ({item, onPress, style}) => (
 );
 
 export default function PlanScreen({navigation}) {
+  const { colors } = useTheme();
   const [selectedId, setSelectedId] = useState(null);
   const onButtonPress = (item) => {
     setSelectedId(item.id);

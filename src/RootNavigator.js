@@ -5,9 +5,9 @@ import {StackNavigator} from './StackNavigator';
 
 const Drawer = createDrawerNavigator();
 
-export const RootNavigator = () => {
+export const RootNavigator = (props) => {
   return (
-    <Drawer.Navigator drawerContent={(props) => <DrawerContent {...props} />}>
+    <Drawer.Navigator drawerContent={() => <DrawerContent {...props} />}>
       <Drawer.Screen name="Home" component={StackNavigator} />
     </Drawer.Navigator>
   );

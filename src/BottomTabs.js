@@ -7,7 +7,7 @@ import Dummy2Screen from './Dummy2Screen';
 
 const Tab = createMaterialBottomTabNavigator();
 
-export const BottomTabs = () => {
+export const BottomTabs = (props) => {
   return (
     <Tab.Navigator
       initialRouteName="Plans"

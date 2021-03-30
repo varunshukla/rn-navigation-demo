@@ -1,6 +1,7 @@
 import React from 'react';
 import {View, StyleSheet} from 'react-native';
 import {DrawerItem, DrawerContentScrollView} from '@react-navigation/drawer';
+import {useTheme} from '@react-navigation/native';
 import {
   Avatar,
   Title,
@@ -13,6 +14,7 @@ import {
 } from 'react-native-paper';
 
 export function DrawerContent(props) {
+  const theme = useTheme();
   return (
     <DrawerContentScrollView {...props}>
       <View style={styles.drawerContent}>
@@ -47,11 +49,11 @@ export function DrawerContent(props) {
           <DrawerItem label="Bookmarks" onPress={() => {}} />
         </Drawer.Section>
         <Drawer.Section title="Preferences">
-          <TouchableRipple onPress={() => {}}>
+          <TouchableRipple onPress={props.toggleTheme}>
             <View style={styles.preference}>
               <Text>Dark Theme</Text>
               <View pointerEvents="none">
-                <Switch value={false} />
+                <Switch value={theme.dark} />
               </View>
             </View>
           </TouchableRipple>
